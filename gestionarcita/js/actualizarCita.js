@@ -1,6 +1,11 @@
 "use strict"
 
 function actualizarCita(nombre, nuevosDatos) {
+    // Validar datos actualizados
+    if (!validarDatos(nombre, nuevosDatos.apellidos, nuevosDatos.dni, nuevosDatos.fecnac, nuevosDatos.observaciones)) {
+        return;
+    }
+    
     // Leemos todas las cookies
     const cookies = leerCookies();
     
@@ -10,7 +15,7 @@ function actualizarCita(nombre, nuevosDatos) {
 
         // Guardamos la nueva cookie (mismo nombre)
         document.cookie = `${nombre}=${encodeURIComponent(JSON.stringify(datosActualizados))}; path=/; max-age=3600`;
-        alert(`Cita de ${nombre} actualizada.`);
+        alert(`Cita de ${nombre} actualizada exitosamente.`);
     } else {
         alert("No se encontró esa cita.");
     }

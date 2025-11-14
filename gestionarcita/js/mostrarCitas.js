@@ -36,7 +36,7 @@ function mostrarCitas() {
             const celdaDni = document.createElement("td");
             const celdaFecnac = document.createElement("td");
             const celdaObservaciones = document.createElement("td");
-            const celdaBorrar = document.createElement("td");
+            const celdaAcciones = document.createElement("td");
 
             celdaApellidos.textContent = valor.apellidos || "";
             celdaDni.textContent = valor.dni || "";
@@ -57,7 +57,9 @@ function mostrarCitas() {
             botonBorrar.style.backgroundColor = "#dc3545";
             botonBorrar.style.color = "white";
             botonBorrar.addEventListener("click", () => borrarCita(clave));
-            celdaBorrar.appendChild(botonBorrar);
+
+            celdaAcciones.appendChild(botonActualizar);
+            celdaAcciones.appendChild(botonBorrar);
 
             fila.append(
                 celdaNombre,
@@ -65,7 +67,7 @@ function mostrarCitas() {
                 celdaDni,
                 celdaFecnac,
                 celdaObservaciones,
-                celdaBorrar
+                celdaAcciones
             );
 
             cuerpo.appendChild(fila);

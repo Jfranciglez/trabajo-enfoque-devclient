@@ -11,9 +11,11 @@
     <script defer src="./js/script.js"></script>
 </head>
 <body>
-     <header>
+    <header>
         <h1 id="header">Dental Clinic</h1>
-        <div id="logo"></div>
+        <div id="logo">
+            <img src="./img/logo.jpg" alt="Logo Dental Clinic" width="400" height="300" >
+        </div>
     </header>
     <table>
         <thead>
@@ -26,6 +28,7 @@
                 <th></th>
             </tr>
             <tr>
+                <form>
                 <th><input type="text" id="nombre" class="nombre" name="nombre" size="15"
                         placeholder="Escribe un nombre..."></th>
                 <th><input type="text" id="apellidos" class="apellidos" name="apellidos" size="15"
@@ -38,10 +41,12 @@
                         placeholder="Observaciones..."></textarea></th>
                 <th><button type="button" id="guardar">Guardar <img src="./img/save.svg" width="22" height="22"
                             style="vertical-align: middle" /></button></th>
+                </form>
             </tr>
         </thead>
         <tbody id="cuerpo"></tbody>
     </table>
+     <button id="volver"><a href="/index.html">Volver al menú principal</a></button>
     <footer>
         <div id="redes"></div>
         <p>© Dental Clinic 2025.</p>
