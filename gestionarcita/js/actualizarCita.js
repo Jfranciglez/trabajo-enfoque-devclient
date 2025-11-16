@@ -1,8 +1,8 @@
 "use strict"
 
-function actualizarCita(nombre, nuevosDatos) {
+function actualizarCita(idCita, nuevosDatos) {
     // Validar datos actualizados
-    if (!validarDatos(nombre, nuevosDatos.apellidos, nuevosDatos.dni, nuevosDatos.fecnac, nuevosDatos.observaciones)) {
+    if (!validarDatos(nuevosDatos.nombre, nuevosDatos.apellidos, nuevosDatos.dni, nuevosDatos.fecnac, nuevosDatos.fechaCita, nuevosDatos.observaciones)) {
         return;
     }
     
@@ -10,12 +10,12 @@ function actualizarCita(nombre, nuevosDatos) {
     const cookies = leerCookies();
     
     // Si existe la cookie, la actualizamos
-    if (cookies[nombre]) {
-        const datosActualizados = { ...cookies[nombre], ...nuevosDatos };
+    if (cookies[idCita]) {
+        const datosActualizados = { ...cookies[idCita], ...nuevosDatos };
 
-        // Guardamos la nueva cookie (mismo nombre)
-        document.cookie = `${nombre}=${encodeURIComponent(JSON.stringify(datosActualizados))}; path=/; max-age=3600`;
-        alert(`Cita de ${nombre} actualizada exitosamente.`);
+        // Guardamos la nueva cookie (mismo id)
+        document.cookie = `${idCita}=${encodeURIComponent(JSON.stringify(datosActualizados))}; path=/; max-age=3600`;
+        alert(`Cita actualizada exitosamente.`);
     } else {
         alert("No se encontró esa cita.");
     }

@@ -6,21 +6,24 @@
     <title>Dental Clinic</title>
     <script defer src="./js/crearCita.js"></script>
     <script defer src="./js/script.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
    <header>
         <h1 id="header">Dental Clinic</h1>
         <div id="logo">
-            <img src="./img/logo.jpg" alt="Logo Dental Clinic" width="400" height="300">
+            <img src="../img/logo.jpg" alt="Logo Dental Clinic">
         </div>
     </header>
     <table>
         <thead>
             <tr>
+                <th>ID Cita</th>
                 <th>Nombre</th>
                 <th>Apellidos</th>
                 <th>DNI</th>
                 <th>Fecha Nacimiento</th>
+                <th>Fecha Cita</th>
                 <th>Observaciones</th>
                 <th></th>
             </tr>
@@ -28,6 +31,7 @@
         <tbody>
             <tr>
                 <form>
+                <th><input type="text" id="idCita" readonly placeholder="Auto-generado"></th>
                 <th><input type="text" id="nombre" class="nombre" name="nombre" size="15"
                         placeholder="Escribe un nombre..."></th>
                 <th><input type="text" id="apellidos" class="apellidos" name="apellidos" size="15"
@@ -36,18 +40,19 @@
                         placeholder="Escribe el dni ..."></th>
                 <th><input type="date" id="fecnac"  size="15"
                         placeholder="Escribe la fecha de nacimiento..."></th>
+                <th><input type="date" id="fechaCita"  size="15"
+                        placeholder="Fecha de cita..."></th>
                 <th><textarea id="observaciones"  size="30"
                         placeholder="Observaciones..."></textarea></th>
-                <th><button type="button" id="guardar">Guardar <img src="./img/save.svg" width="22" height="22"
-                            style="vertical-align: middle" /></button></th>
+                <th><button type="button" id="guardar"> Guardar</button></th>
                 </form>
             </tr>
         </tbody>
     </table>
 
     <button id="volver"><a href="/index.html">Volver al menú principal</a></button>
+
     <footer>
-        <div id="redes"></div>
         <p>© Dental Clinic 2025.</p>
     </footer>
 </body>

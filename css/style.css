@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    padding: 1.5rem;
+    margin: 2rem auto;
+    max-width: 80%;
+    background: rgba(0, 180, 210, 0.15);  
+    color: #2a2a2a;                      
+    border-radius: 20px;                 
+    border: 1px solid rgba(0, 180, 210, 0.3);  
+    backdrop-filter: blur(4px);          
+    font-weight: 600;                    
+    letter-spacing: 1px;                 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08); 
+}
+
+
+a{
+    text-decoration: none;
+    color:black;
+}
+
+button{
+    padding: 10px 20px;
+    background-color: whitesmoke;
+    border:none;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 0 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+
+
+button:hover{
+    box-shadow: 0 4px 8px rgb(0, 234, 255);
+    transform: translateY(-2px);
+}
+
+/* Centrar el logo desde su contenedor */
+#logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+#logo img{
+    display: block;
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+}
+
+section{
+    display: flex;
+    justify-content: center ;
+
+}
+
+footer{
+    margin-top: 50px;
+    padding: 30px;
+    height: auto;
+    width: auto;
+    font-size: 15px;
+    text-align: center;
+   
+    
+}
+
+/* Centrar contenido de celdas de tablas y dar padding para separación normal */
+table,
+table th,
+table td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 8px 12px;
+}
+
+/* Centrar la tabla en la página */
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: auto; 
+    max-width: 100%;
+}
+
+.acciones {
+    display: flex;
+    justify-content: center;
+    gap: 8px; /* separación entre botones */
+    align-items: center;
+}
+
+#volver {
+    display: block;
+    margin: 18px auto;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+
+#guardar:hover {
+    background-color: whitesmoke !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Estilos específicos para botones de actualización y borrar */
+.actualizar {
+    background-color: #28a745;
+    color: white;
+}
+
+.actualizar:hover {
+    background-color: #218838;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.borrar {
+    background-color: #dc3545;
+    color: white;
+}
+
+.borrar:hover {
+    background-color: #c82333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+
+/* Mejorar apariencia de inputs */
+input[type="text"],
+input[type="date"],
+textarea {
+    padding: 10px 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: 'Arial', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+}
+
+input[type="text"]::placeholder,
+input[type="date"]::placeholder,
+textarea::placeholder {
+    color: #999;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+/*  Web responsive */
+@media (max-width: 768px) {
+    #container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    #logo img {
+        width: 120px;
+        height: 120px;
+    }
+
+    button {
+        padding: 8px 12px;
+        font-size: 12px;
+        margin: 0 4px;
+    }
+
+    table,
+    table th,
+    table td {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    textarea {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .acciones {
+        gap: 4px;
+    }
+
+    section {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    footer {
+        margin-top: 30px;
+        padding: 20px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 18px;
+        padding: 10px;
+        margin: 10px auto;
+    }
+
+    #logo img {
+        width: 100px;
+        height: 100px;
+    }
+
+    button {
+        padding: 6px 10px;
+        font-size: 11px;
+        margin: 0 2px;
+    }
+
+    table,
+    table th,
+    table td {
+        padding: 4px 6px;
+        font-size: 10px;
+        word-break: break-word;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    textarea {
+        padding: 6px 8px;
+        font-size: 11px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .acciones {
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    footer {
+        margin-top: 20px;
+        padding: 15px;
+        font-size: 11px;
+    }
+}

@@ -5,16 +5,18 @@ if (navigator.cookieEnabled) {
   const apellidos = document.getElementById("apellidos");
   const dni = document.getElementById("dni");
   const fecnac = document.getElementById("fecnac");
+  const fechaCita = document.getElementById("fechaCita");
   const observaciones = document.getElementById("observaciones");
   const botonGuardar = document.getElementById("guardar");
 
   botonGuardar.addEventListener("click", function () {
-    crearCita(nombre.value, apellidos.value, dni.value, fecnac.value, observaciones.value );
+    crearCita(nombre.value, apellidos.value, dni.value, fecnac.value, fechaCita.value, observaciones.value );
     mostrarCitas();
     nombre.value = "";
     apellidos.value = "";
     dni.value = "";
     fecnac.value = "";
+    fechaCita.value = "";
     observaciones.value = "";
     nombre.focus();
   });

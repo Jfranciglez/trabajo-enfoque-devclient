@@ -1,6 +1,10 @@
 "use strict"
 
-function validarDatos(nombre, apellidos, dni, fecnac, observaciones) {
+function generarIdCita() {
+    return Date.now().toString();
+}
+
+function validarDatos(nombre, apellidos, dni, fecnac, fechaCita, observaciones) {
     // Validar que los campos requeridos no estén vacíos
     if (!nombre.trim()) {
         alert("El nombre es obligatorio");
@@ -19,6 +23,11 @@ function validarDatos(nombre, apellidos, dni, fecnac, observaciones) {
     
     if (!fecnac.trim()) {
         alert("La fecha de nacimiento es obligatoria");
+        return false;
+    }
+
+    if (!fechaCita.trim()) {
+        alert("La fecha de cita es obligatoria");
         return false;
     }
     
@@ -48,18 +57,27 @@ function validarDatos(nombre, apellidos, dni, fecnac, observaciones) {
         alert("La fecha de nacimiento no puede ser una fecha futura");
         return false;
     }
+
+    // Validar que la fecha de cita no sea anterior a hoy
+    const fechaCitaObj = new Date(fechaCita);
+    hoy.setHours(0, 0, 0, 0);
+    if (fechaCitaObj < hoy) {
+        alert("La fecha de cita debe ser igual o posterior a hoy");
+        return false;
+    }
     
     return true;
 }
 
-function crearCita(nombre, apellidos, dni, fecnac, observaciones) {
+function crearCita(nombre, apellidos, dni, fecnac, fechaCita, observaciones) {
     // Validar datos antes de crear la cita
-    if (!validarDatos(nombre, apellidos, dni, fecnac, observaciones)) {
+    if (!validarDatos(nombre, apellidos, dni, fecnac, fechaCita, observaciones)) {
         return;
     }
     
-    const datos = { apellidos, dni, fecnac, observaciones };
-    document.cookie = `${nombre}=${JSON.stringify(datos)}; path=/; `;
+    const idCita = generarIdCita();
+    const datos = { idCita, nombre, apellidos, dni, fecnac, fechaCita, observaciones };
+    document.cookie = `${idCita}=${JSON.stringify(datos)}; path=/; `;
     alert("Cita creada exitosamente");
     mostrarCitas();
 }
