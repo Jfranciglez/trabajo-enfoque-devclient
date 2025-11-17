@@ -9,7 +9,7 @@ if (navigator.cookieEnabled) {
   const observaciones = document.getElementById("observaciones");
   const botonGuardar = document.getElementById("guardar");
 
-  botonGuardar.addEventListener("click", function () {
+  botonGuardar.onclick = function () {
     crearCita(nombre.value, apellidos.value, dni.value, fecnac.value, fechaCita.value, observaciones.value );
     mostrarCitas();
     nombre.value = "";
@@ -19,7 +19,7 @@ if (navigator.cookieEnabled) {
     fechaCita.value = "";
     observaciones.value = "";
     nombre.focus();
-  });
+  };
 
   mostrarCitas();
 } else {

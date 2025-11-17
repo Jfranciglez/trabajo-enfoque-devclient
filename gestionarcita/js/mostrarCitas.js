@@ -111,7 +111,9 @@ function mostrarFormularioActualizar(nombre, datos) {
     const botonGuardar = document.getElementById("guardar");
     const textoOriginal = botonGuardar.innerHTML;
     botonGuardar.innerHTML = "Actualizar";
-    botonGuardar.onclick = function() {
+    
+    // Crear una función anónima para manejar el evento de actualización
+    const funcionActualizar = function() {
         const nuevosDatos = {
             idCita: datos.idCita,
             nombre: document.getElementById("nombre").value,
@@ -123,9 +125,11 @@ function mostrarFormularioActualizar(nombre, datos) {
         };
         actualizarCita(datos.idCita, nuevosDatos);
         
-        // Restaurar botón y limpiar campos
+        // Restaurar botón a su estado original
         botonGuardar.innerHTML = textoOriginal;
         botonGuardar.onclick = null;
+        
+        // Limpiar campos
         document.getElementById("idCita").value = "";
         document.getElementById("nombre").value = "";
         document.getElementById("apellidos").value = "";
@@ -134,4 +138,7 @@ function mostrarFormularioActualizar(nombre, datos) {
         document.getElementById("fechaCita").value = "";
         document.getElementById("observaciones").value = "";
     };
+    
+    // Remover cualquier evento anterior y asignar el nuevo
+    botonGuardar.onclick = funcionActualizar;
 }

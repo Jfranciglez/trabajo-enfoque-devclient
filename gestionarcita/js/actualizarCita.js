@@ -11,10 +11,13 @@ function actualizarCita(idCita, nuevosDatos) {
     
     // Si existe la cookie, la actualizamos
     if (cookies[idCita]) {
+        // Borrar la cookie antigua 
+        document.cookie = `${idCita}=; path=/; max-age=0`;
+        
+        // Guardar la nueva cookie con los datos actualizados
         const datosActualizados = { ...cookies[idCita], ...nuevosDatos };
-
-        // Guardamos la nueva cookie (mismo id)
-        document.cookie = `${idCita}=${encodeURIComponent(JSON.stringify(datosActualizados))}; path=/; max-age=3600`;
+        document.cookie = `${idCita}=${encodeURIComponent(JSON.stringify(datosActualizados))}; path=/;`;
+        
         alert(`Cita actualizada exitosamente.`);
     } else {
         alert("No se encontró esa cita.");
