@@ -31,16 +31,24 @@ function mostrarCitas() {
 
             const celdaId = document.createElement("td");
             celdaId.textContent = valor.idCita || clave;
+            celdaId.setAttribute('data-label', 'ID Cita');
 
             const celdaNombre = document.createElement("td");
             celdaNombre.textContent = valor.nombre || "";
+            celdaNombre.setAttribute('data-label', 'Nombre');
 
             const celdaApellidos = document.createElement("td");
+            celdaApellidos.setAttribute('data-label', 'Apellidos');
             const celdaDni = document.createElement("td");
+            celdaDni.setAttribute('data-label', 'DNI');
             const celdaFecnac = document.createElement("td");
+            celdaFecnac.setAttribute('data-label', 'Fecha Nacimiento');
             const celdaFechaCita = document.createElement("td");
+            celdaFechaCita.setAttribute('data-label', 'Fecha Cita');
             const celdaObservaciones = document.createElement("td");
+            celdaObservaciones.setAttribute('data-label', 'Observaciones');
             const celdaAcciones = document.createElement("td");
+            celdaAcciones.setAttribute('data-label', 'Acciones');
             celdaAcciones.className = "acciones"; // usa la clase .acciones definida en CSS para centrar y separar botones
 
             celdaApellidos.textContent = valor.apellidos || "";
@@ -82,7 +90,7 @@ function mostrarCitas() {
             cuerpo.appendChild(fila);
         });
     } else {
-        cuerpo.innerHTML = "<tr><td colspan='8'>No hay cookies almacenadas</td></tr>";
+        cuerpo.innerHTML = "<tr><td colspan='8'>No hay citas almacenadas</td></tr>";
     }
 }
 
